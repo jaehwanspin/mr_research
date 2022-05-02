@@ -166,7 +166,7 @@ int main(int argc, char** argv)
 
 	(MR_FOR (stdout, MR_NARG ((sample_model_t, &m, JSON)), MR_ADD, MR_PRINT_ONE_ELEMENT, (sample_model_t, &m, JSON)));
 
-
+	const int na = MR_NARG();
 
 	return 0;
 }
