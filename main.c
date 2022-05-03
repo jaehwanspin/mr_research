@@ -577,31 +577,197 @@
 // )
 
 
+// TYPEDEF_ATTR(
+// 	PROTO,
+// 	84,
+// 	STRUCT,
+// 	ATTRIBUTES(),
+// 	sample_model_t,
+// 	(uint32_t, number),
+// 	(char, name, [8]),
+// 	(size_t, children_size),
+// 	(sample_model_t*, children),
+// );
+// TYPEDEF_ATTR(
+// 	DESC,
+// 	84,
+// 	STRUCT,
+// 	ATTRIBUTES(),
+// 	sample_model_t,
+// 	(uint32_t, number),
+// 	(char, name, [8]),
+// 	(size_t, children_size),
+// 	(sample_model_t*, children),
+// );
 
-TYPEDEF_ATTR
-(
+
+
+
+
+
+// P00_UNFOLD (
+// 	MR_TYPEDEF_,
+// 	STRUCT,
+// 	PROTO,
+// 	84,
+// 	sample_model_t
+// )
+// MR_FOR (
+// 	(PROTO, sample_model_t),
+// 	MR_NARG (
+// 		(uint32_t, number),
+// 		(char, name, [8]),
+// 		(size_t, children_size),
+// 		(sample_model_t*, children),
+// 	),
+// 	MR_SER,
+// 	MR_PASTE3 (
+// 		P00_,
+// 		STRUCT,
+// 		_HANDLER
+// 	),
+// 	(uint32_t, number),
+// 	(char, name, [8]),
+// 	(size_t, children_size),
+// 	(sample_model_t*, children),
+// )
+// P00_UNFOLD (
+// 	MR_END_,
+// 	STRUCT,
+// 	PROTO,
+// 	84,
+// 	sample_model_t,
+// 	MR_PASTE2 (
+// 		P00_REMOVE_,
+// 		ATTRIBUTES()
+// 	)
+// )
+// P00_UNFOLD(
+// 	MR_TYPEDEF_,
+// 	STRUCT,
+// 	DESC,
+// 	84,
+// 	sample_model_t
+// )
+// MR_FOR(
+// 	(DESC, sample_model_t),
+// 	MR_NARG(
+// 		(uint32_t, number),
+// 		(char, name, [8]),
+// 		(size_t, children_size),
+// 		(sample_model_t*, children),
+// 		),
+// 	MR_SER,
+// 	MR_PASTE3(
+// 		P00_,
+// 		STRUCT,
+// 		_HANDLER
+// 	),
+// 	(uint32_t, number),
+// 	(char, name, [8]),
+// 	(size_t, children_size),
+// 	(sample_model_t*, children),
+// )
+// P00_UNFOLD(
+// 	MR_END_,
+// 	STRUCT,
+// 	DESC,
+// 	84,
+// 	sample_model_t,
+// 	MR_PASTE2(
+// 		P00_REMOVE_,
+// 		ATTRIBUTES()
+// 	)
+// )
+
+
+
+
+
+
+
+// MR_PASTE4(MR_TYPEDEF_, STRUCT, _, PROTO) (84, sample_model_t)
+// MR_FOR(
+// 	(PROTO, sample_model_t),
+// 	4,
+// 	MR_SER,
+// 	P00_STRUCT_HANDLER,
+// 	(uint32_t, number),
+// 	(char, name, [8]),
+// 	(size_t, children_size),
+// 	(sample_model_t*, children),
+// 	)
+// P00_UNFOLD(
+// 	MR_END_,
+// 	STRUCT,
+// 	PROTO,
+// 	84,
+// 	sample_model_t,
+// 	P00_REMOVE_ATTRIBUTES()
+// )
+// MR_PASTE4(MR_TYPEDEF_, STRUCT, _, DESC) (84, sample_model_t)
+// MR_FOR(
+// 	(DESC, sample_model_t),
+// 	4,
+// 	MR_SER,
+// 	P00_STRUCT_HANDLER,
+// 	(uint32_t, number),
+// 	(char, name, [8]),
+// 	(size_t, children_size),
+// 	(sample_model_t*, children),
+// )
+// P00_UNFOLD(
+// 	MR_END_,
+// 	STRUCT,
+// 	DESC,
+// 	84,
+// 	sample_model_t,
+// 	P00_REMOVE_ATTRIBUTES()
+// )
+
+
+
+MR_PASTE4(MR_TYPEDEF_, STRUCT, _, PROTO) (84, sample_model_t)
+MR_FOR(
+	(PROTO, sample_model_t),
+	4,
+	MR_SER,
+	P00_STRUCT_HANDLER,
+	(uint32_t, number),
+	(char, name, [8]),
+	(size_t, children_size),
+	(sample_model_t*, children),
+	)
+P00_UNFOLD(
+	MR_END_,
+	STRUCT,
 	PROTO,
 	84,
-	STRUCT,
-	ATTRIBUTES(),
 	sample_model_t,
+	P00_REMOVE_ATTRIBUTES()
+)
+MR_PASTE4(MR_TYPEDEF_, STRUCT, _, DESC) (84, sample_model_t)
+MR_FOR(
+	(DESC, sample_model_t),
+	4,
+	MR_SER,
+	P00_STRUCT_HANDLER,
 	(uint32_t, number),
 	(char, name, [8]),
 	(size_t, children_size),
 	(sample_model_t*, children),
 )
-TYPEDEF_ATTR
-(
+P00_UNFOLD(
+	MR_END_,
+	STRUCT,
 	DESC,
 	84,
-	STRUCT,
-	ATTRIBUTES(),
 	sample_model_t,
-	(uint32_t, number),
-	(char, name, [8]),
-	(size_t, children_size),
-	(sample_model_t*, children),
+	P00_REMOVE_ATTRIBUTES()
 )
+
+
+
 
 
 int main(int argc, char** argv)
