@@ -727,29 +727,84 @@
 
 
 
-MR_PASTE4(MR_TYPEDEF_, STRUCT, _, PROTO) (84, sample_model_t)
-MR_FOR(
+// MR_TYPEDEF_STRUCT_PROTO (84, sample_model_t)
+// MR_FOR4 (
+// 	(PROTO, sample_model_t),
+// 	MR_SER,
+// 	P00_STRUCT_HANDLER,
+// 	(uint32_t, number),
+// 	(char, name, [8]),
+// 	(size_t, children_size),
+// 	(sample_model_t*, children),
+// )
+// P00_UNFOLD(
+// 	MR_END_,
+// 	STRUCT,
+// 	PROTO,
+// 	84,
+// 	sample_model_t,
+// )
+// MR_TYPEDEF_STRUCT_DESC (84, sample_model_t)
+// MR_FOR4 (
+// 	(DESC, sample_model_t),
+// 	MR_SER,
+// 	P00_STRUCT_HANDLER,
+// 	(uint32_t, number),
+// 	(char, name, [8]),
+// 	(size_t, children_size),
+// 	(sample_model_t*, children),
+// )
+// P00_UNFOLD(
+// 	MR_END_,
+// 	STRUCT,
+// 	DESC,
+// 	84,
+// 	sample_model_t,
+// )
+
+
+
+
+// typedef struct MR_TYPEDEF_PREFIX (sample_model_t) sample_model_t; struct MR_TYPEDEF_PREFIX (sample_model_t) {
+// MR_FOR4 (
+// 	(PROTO, sample_model_t),
+// 	MR_SER,
+// 	P00_STRUCT_HANDLER,
+// 	(uint32_t, number),
+// 	(char, name, [8]),
+// 	(size_t, children_size),
+// 	(sample_model_t*, children),
+// )
+// MR_PASTE4 (MR_END_, STRUCT, _, PROTO) (84, sample_model_t,)
+// MR_TYPEDEF_DESC (84, sample_model_t, MR_TYPE_STRUCT)
+// MR_FOR4 (
+// 	(DESC, sample_model_t),
+// 	MR_SER,
+// 	P00_STRUCT_HANDLER,
+// 	(uint32_t, number),
+// 	(char, name, [8]),
+// 	(size_t, children_size),
+// 	(sample_model_t*, children),
+// )
+// MR_PASTE4 (MR_END_, STRUCT, _, DESC) (84, sample_model_t,)
+
+
+
+
+typedef struct sample_model_t sample_model_t; struct sample_model_t {
+MR_FOR4 (
 	(PROTO, sample_model_t),
-	4,
 	MR_SER,
 	P00_STRUCT_HANDLER,
 	(uint32_t, number),
 	(char, name, [8]),
 	(size_t, children_size),
 	(sample_model_t*, children),
-	)
-P00_UNFOLD(
-	MR_END_,
-	STRUCT,
-	PROTO,
-	84,
-	sample_model_t,
-	P00_REMOVE_ATTRIBUTES()
 )
-MR_PASTE4(MR_TYPEDEF_, STRUCT, _, DESC) (84, sample_model_t)
-MR_FOR(
+MR_END_STRUCT_PROTO (84, sample_model_t,)
+MR_TYPEDEF_DESC (84, sample_model_t, MR_TYPE_STRUCT)
+MR_FOR4 (
 	(DESC, sample_model_t),
-	4,
 	MR_SER,
 	P00_STRUCT_HANDLER,
 	(uint32_t, number),
@@ -757,16 +812,7 @@ MR_FOR(
 	(size_t, children_size),
 	(sample_model_t*, children),
 )
-P00_UNFOLD(
-	MR_END_,
-	STRUCT,
-	DESC,
-	84,
-	sample_model_t,
-	P00_REMOVE_ATTRIBUTES()
-)
-
-
+MR_END_STRUCT_DESC (84, sample_model_t,)
 
 
 
