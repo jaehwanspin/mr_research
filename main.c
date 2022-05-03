@@ -93,48 +93,515 @@
 // )
 
 
-P00_TYPEDEF_MODE_ (
+// P00_TYPEDEF_MODE_ (
+// 	PROTO,
+// 	84,
+// 	STRUCT,
+// 	ATTRIBUTES (
+// 		P00_GET_ATTRIBUTES (
+// 			sample_model_t,
+// 			(uint32_t, number),
+// 			(char, name, [8]),
+// 			(size_t, children_size),
+// 			(sample_model_t*, children)
+// 		)
+// 	),
+// 	P00_GET_NON_ATTRIBUTES (
+// 		sample_model_t,
+// 		(uint32_t, number),
+// 		(char, name, [8]),
+// 		(size_t, children_size),
+// 		(sample_model_t*, children)
+// 	)
+// )
+// P00_TYPEDEF_MODE_ (
+// 	DESC,
+// 	84,
+// 	STRUCT,
+// 	ATTRIBUTES (
+// 		P00_GET_ATTRIBUTES (
+// 			sample_model_t,
+// 			(uint32_t, number),
+// 			(char, name, [8]),
+// 			(size_t, children_size),
+// 			(sample_model_t*, children)
+// 		)
+// 	),
+// 	P00_GET_NON_ATTRIBUTES (
+// 		sample_model_t,
+// 		(uint32_t, number),
+// 		(char, name, [8]),
+// 		(size_t, children_size),
+// 		(sample_model_t*, children)
+// 	)
+// );
+
+
+
+
+// P00_TYPEDEF_MODE_ (
+// 	PROTO,
+// 	84,
+// 	STRUCT,
+// 	ATTRIBUTES (
+// 		MR_FOREACH (
+// 			P00_EXTRACT_ATTRIBUTES,
+// 			sample_model_t,
+// 			(uint32_t, number),
+// 			(char, name, [8]),
+// 			(size_t, children_size),
+// 			(sample_model_t*, children)
+// 		)
+// 	),
+// 	MR_FOREACH (
+// 		P00_EXTRACT_NON_ATTRIBUTES,
+// 		sample_model_t,
+// 		(uint32_t, number),
+// 		(char, name, [8]),
+// 		(size_t, children_size),
+// 		(sample_model_t*, children)
+// 	)
+// )
+// P00_TYPEDEF_MODE_ (
+// 	DESC,
+// 	84,
+// 	STRUCT,
+// 	ATTRIBUTES (
+// 		MR_FOREACH (
+// 			P00_EXTRACT_ATTRIBUTES,
+// 			sample_model_t,
+// 			(uint32_t, number), 
+// 			(char, name, [8]),
+// 			(size_t, children_size),
+// 			(sample_model_t*, children)
+// 		)
+// 	),
+// 	MR_FOREACH (
+// 		P00_EXTRACT_NON_ATTRIBUTES,
+// 		sample_model_t,
+// 		(uint32_t, number),
+// 		(char, name, [8]),
+// 		(size_t, children_size),
+// 		(sample_model_t*, children)
+// 	)
+// );
+
+
+
+
+// P00_TYPEDEF_MODE_ (
+// 	PROTO,
+// 	84,
+// 	STRUCT,
+// 	ATTRIBUTES (
+// 		P00_EXTRACT_ATTRIBUTES (sample_model_t)
+// 		P00_EXTRACT_ATTRIBUTES ((uint32_t, number))
+// 		P00_EXTRACT_ATTRIBUTES ((char, name, [8]))
+// 		P00_EXTRACT_ATTRIBUTES ((size_t, children_size))
+// 		P00_EXTRACT_ATTRIBUTES ((sample_model_t*, children))
+// 	),
+// 	P00_EXTRACT_NON_ATTRIBUTES (sample_model_t)
+// 	P00_EXTRACT_NON_ATTRIBUTES ((uint32_t, number))
+// 	P00_EXTRACT_NON_ATTRIBUTES ((char, name, [8]))
+// 	P00_EXTRACT_NON_ATTRIBUTES ((size_t, children_size))
+// 	P00_EXTRACT_NON_ATTRIBUTES ((sample_model_t*, children))
+// )
+// P00_TYPEDEF_MODE_ (
+// 	DESC,
+// 	84,
+// 	STRUCT,
+// 	ATTRIBUTES (
+// 		P00_EXTRACT_ATTRIBUTES (sample_model_t)
+// 		P00_EXTRACT_ATTRIBUTES ((uint32_t, number))
+// 		P00_EXTRACT_ATTRIBUTES ((char, name, [8]))
+// 		P00_EXTRACT_ATTRIBUTES ((size_t, children_size))
+// 		P00_EXTRACT_ATTRIBUTES ((sample_model_t*, children))
+// 	),
+// 	P00_EXTRACT_NON_ATTRIBUTES (sample_model_t)
+// 	P00_EXTRACT_NON_ATTRIBUTES ((uint32_t, number))
+// 	P00_EXTRACT_NON_ATTRIBUTES ((char, name, [8]))
+// 	P00_EXTRACT_NON_ATTRIBUTES ((size_t, children_size))
+// 	P00_EXTRACT_NON_ATTRIBUTES ((sample_model_t*, children))
+// );
+
+
+
+
+// P00_TYPEDEF_MODE_ (
+// 	PROTO,
+// 	84,
+// 	STRUCT,
+// 	ATTRIBUTES (
+// 		MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ sample_model_t))
+// 		(
+
+// 		)
+// 		(
+// 			MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, sample_model_t))
+// 			(
+
+// 			)
+// 			(
+// 				MR_PASTE2 (P00_REMOVE_, sample_model_t)
+// 			)
+// 		)
+
+// 		MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (uint32_t, number)))
+// 		(
+
+// 		)
+// 		(
+// 			MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (uint32_t, number)))
+// 			(
+
+// 			)
+// 			(
+// 				MR_PASTE2 (P00_REMOVE_, (uint32_t, number))
+// 			)
+// 		)
+
+// 		MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (char, name, [8])))
+// 		(
+
+// 		)
+// 		(
+// 			MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (char, name, [8])))
+// 			(
+
+// 			)
+// 			(
+// 				MR_PASTE2 (P00_REMOVE_, (char, name, [8]))
+// 			)
+// 		)
+
+// 		MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (size_t, children_size)))
+// 		(
+
+// 		)
+// 		(
+// 			MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (size_t, children_size)))
+// 			(
+
+// 			)
+// 			(
+// 				MR_PASTE2 (P00_REMOVE_, (size_t, children_size))
+// 			)
+// 		)
+
+// 		MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (sample_model_t*, children)))
+// 		(
+
+// 		)
+// 		(
+// 			MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (sample_model_t*, children)))
+// 			(
+
+// 			)
+// 			(
+// 				MR_PASTE2 (P00_REMOVE_, (sample_model_t*, children))
+// 			)
+// 		)
+
+// 	),
+
+// 	MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ sample_model_t))
+// 	(
+// 		sample_model_t,
+// 	)
+// 	(
+// 		MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, sample_model_t))
+// 		(
+// 			sample_model_t,
+// 		)
+// 		(
+
+// 		)
+// 	)
+
+// 	MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (uint32_t, number)))
+// 	(
+// 		(uint32_t, number),
+// 	)
+// 	(
+// 		MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (uint32_t, number)))
+// 		(
+// 			(uint32_t, number),
+// 		)
+// 		(
+
+// 		)
+// 	)
+
+// 	MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (char, name, [8])))
+// 	(
+// 		(char, name, [8]),
+// 	)
+// 	(
+// 		MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (char, name, [8])))
+// 		(
+// 			(char, name, [8]),
+// 		)
+// 		(
+
+// 		)
+// 	)
+
+// 	MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (size_t, children_size)))
+// 	(
+// 		(size_t, children_size),
+// 	)
+// 	(
+// 		MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (size_t, children_size)))
+// 		(
+// 			(size_t, children_size),
+// 		)
+// 		(
+
+// 		)
+// 	)
+
+// 	MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (sample_model_t*, children)))
+// 	(
+// 		(sample_model_t*, children),
+// 	)
+// 	(
+// 		MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (sample_model_t*, children)))
+// 		(
+// 			(sample_model_t*, children),
+// 		)
+// 		(
+
+// 		)
+// 	)
+// )
+// P00_TYPEDEF_MODE_ (
+// 	DESC,
+// 	84,
+// 	STRUCT,
+// 	ATTRIBUTES (
+// 		MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ sample_model_t))
+// 		(
+
+// 		)
+// 		(
+// 			MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, sample_model_t))
+// 			(
+
+// 			)
+// 			(
+// 				MR_PASTE2 (P00_REMOVE_, sample_model_t)
+// 			)
+// 		)
+
+// 		MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (uint32_t, number)))
+// 		(
+
+// 		)
+// 		(
+// 			MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (uint32_t, number)))
+// 			(
+
+// 			)
+// 			(
+// 				MR_PASTE2 (P00_REMOVE_, (uint32_t, number))
+// 			)
+// 		)
+
+// 		MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (char, name, [8])))
+// 		(
+
+// 		)
+// 		(
+// 			MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (char, name, [8])))
+// 			(
+
+// 			)
+// 			(
+// 				MR_PASTE2 (P00_REMOVE_, (char, name, [8]))
+// 			)
+// 		)
+
+// 		MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (size_t, children_size)))
+// 		(
+
+// 		)
+// 		(
+// 			MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (size_t, children_size)))
+// 			(
+
+// 			)
+// 			(
+// 				MR_PASTE2 (P00_REMOVE_, (size_t, children_size))
+// 			)
+// 		)
+
+// 		MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (sample_model_t*, children)))
+// 		(
+
+// 		)
+// 		(
+// 			MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (sample_model_t*, children)))
+// 			(
+
+// 			)
+// 			(
+// 				MR_PASTE2 (P00_REMOVE_, (sample_model_t*, children))
+// 			)
+// 		)
+// 	),
+	
+// 	MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ sample_model_t))
+// 	(
+// 		sample_model_t,
+// 	)
+// 	(
+// 		MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, sample_model_t))
+// 		(
+// 			sample_model_t,
+// 		)
+// 		(
+
+// 		)
+// 	)
+
+// 	MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (uint32_t, number)))
+// 	(
+// 		(uint32_t, number),
+// 	)
+// 	(
+// 		MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (uint32_t, number)))
+// 		(
+// 			(uint32_t, number),
+// 		)
+// 		(
+
+// 		)
+// 	)
+
+// 	MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (char, name, [8])))
+// 	(
+// 		(char, name, [8]),
+// 	)
+// 	(
+// 		MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (char, name, [8])))
+// 		(
+// 			(char, name, [8]),
+// 		)
+// 		(
+
+// 		)
+// 	)
+
+// 	MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (size_t, children_size)))
+// 	(
+// 		(size_t, children_size),
+// 	)
+// 	(
+// 		MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (size_t, children_size)))
+// 		(
+// 			(size_t, children_size),
+// 		)
+// 		(
+
+// 		)
+// 	)
+
+// 	MR_IF_ELSE (MR_HAS_COMMA (P00_IS__EQ__ (sample_model_t*, children)))
+// 	(
+// 		(sample_model_t*, children),
+// 	)
+// 	(
+// 		MR_IF_ELSE (MR_PASTE2 (P00_IS_ATTRIBUTES_EQ_, (sample_model_t*, children)))
+// 		(
+// 			(sample_model_t*, children),
+// 		)
+// 		(
+
+// 		)
+// 	)
+// );
+
+
+
+
+
+
+// P00_TYPEDEF_MODE_ (
+// 	PROTO,
+// 	84,
+// 	STRUCT,
+// 	ATTRIBUTES(),
+// 	sample_model_t,
+// 	(uint32_t, number),
+// 	(char, name, [8]),
+// 	(size_t, children_size),
+// 	(sample_model_t*, children),
+// )
+// P00_TYPEDEF_MODE_ (
+// 	DESC,
+// 	84,
+// 	STRUCT,
+// 	ATTRIBUTES(),
+// 	sample_model_t,
+// 	(uint32_t, number),
+// 	(char, name, [8]),
+// 	(size_t, children_size),
+// 	(sample_model_t*, children),
+// );
+
+
+
+// P00_TYPEDEF_ATTR_STRUCT
+// (
+// 	PROTO,
+// 	84,
+// 	STRUCT,
+// 	ATTRIBUTES(),
+// 	sample_model_t,
+// 	(uint32_t, number),
+// 	(char, name, [8]),
+// 	(size_t, children_size),
+// 	(sample_model_t*, children),
+// )
+// P00_TYPEDEF_ATTR_STRUCT
+// (
+// 	DESC,
+// 	84,
+// 	STRUCT,
+// 	ATTRIBUTES(),
+// 	sample_model_t,
+// 	(uint32_t, number),
+// 	(char, name, [8]),
+// 	(size_t, children_size),
+// 	(sample_model_t*, children),
+// )
+
+
+
+TYPEDEF_ATTR
+(
 	PROTO,
 	84,
 	STRUCT,
-	ATTRIBUTES (
-		P00_GET_ATTRIBUTES (
-			sample_model_t,
-			(uint32_t, number),
-			(char, name, [8]),
-			(size_t, children_size),
-			(sample_model_t*, children)
-		)
-	),
-	P00_GET_NON_ATTRIBUTES (
-		sample_model_t,
-		(uint32_t, number),
-		(char, name, [8]),
-		(size_t, children_size),
-		(sample_model_t*, children)
-	)
+	ATTRIBUTES(),
+	sample_model_t,
+	(uint32_t, number),
+	(char, name, [8]),
+	(size_t, children_size),
+	(sample_model_t*, children),
 )
-P00_TYPEDEF_MODE_ (
+TYPEDEF_ATTR
+(
 	DESC,
 	84,
 	STRUCT,
-	ATTRIBUTES (
-		P00_GET_ATTRIBUTES (
-			sample_model_t,
-			(uint32_t, number),
-			(char, name, [8]),
-			(size_t, children_size),
-			(sample_model_t*, children)
-		)
-	),
-	P00_GET_NON_ATTRIBUTES (
-		sample_model_t,
-		(uint32_t, number),
-		(char, name, [8]),
-		(size_t, children_size),
-		(sample_model_t*, children)
-	)
-);
+	ATTRIBUTES(),
+	sample_model_t,
+	(uint32_t, number),
+	(char, name, [8]),
+	(size_t, children_size),
+	(sample_model_t*, children),
+)
 
 
 int main(int argc, char** argv)
