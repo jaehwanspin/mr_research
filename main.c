@@ -927,7 +927,39 @@ static mr_td_t MR_DESCRIPTOR_PREFIX(84, sample_model_t) = {
 			.type = (char[]){"uint32_t"},
 			.size = sizeof(((sample_model_t *)0)->number),
 			.offset = __builtin_offsetof(sample_model_t, number),
-			.mr_type = (0 | (__builtin_types_compatible_p(void, uint32_t) ? MR_TYPE_VOID : 0) | (__builtin_types_compatible_p(_Bool, uint32_t) ? MR_TYPE_BOOL : 0) | (__builtin_types_compatible_p(int8_t, uint32_t) ? MR_TYPE_INT8 : 0) | (__builtin_types_compatible_p(uint8_t, uint32_t) ? MR_TYPE_UINT8 : 0) | (__builtin_types_compatible_p(int16_t, uint32_t) ? MR_TYPE_INT16 : 0) | (__builtin_types_compatible_p(uint16_t, uint32_t) ? MR_TYPE_UINT16 : 0) | (__builtin_types_compatible_p(int32_t, uint32_t) ? MR_TYPE_INT32 : 0) | (__builtin_types_compatible_p(uint32_t, uint32_t) ? MR_TYPE_UINT32 : 0) | (__builtin_types_compatible_p(int64_t, uint32_t) ? MR_TYPE_INT64 : 0) | (__builtin_types_compatible_p(uint64_t, uint32_t) ? MR_TYPE_UINT64 : 0) | (__builtin_types_compatible_p(long long, uint32_t) ? MR_TYPE_INT64 : 0) | (__builtin_types_compatible_p(unsigned long long, uint32_t) ? MR_TYPE_UINT64 : 0) | (__builtin_types_compatible_p(float, uint32_t) ? MR_TYPE_FLOAT : 0) | (__builtin_types_compatible_p(_Complex float, uint32_t) ? MR_TYPE_COMPLEX_FLOAT : 0) | (__builtin_types_compatible_p(double, uint32_t) ? MR_TYPE_DOUBLE : 0) | (__builtin_types_compatible_p(_Complex double, uint32_t) ? MR_TYPE_COMPLEX_DOUBLE : 0) | (__builtin_types_compatible_p(long double, uint32_t) ? MR_TYPE_LONG_DOUBLE : 0) | (__builtin_types_compatible_p(_Complex long double, uint32_t) ? MR_TYPE_COMPLEX_LONG_DOUBLE : 0) | (__builtin_types_compatible_p(char, uint32_t) ? MR_TYPE_CHAR : 0) | ((__builtin_types_compatible_p(__typeof__(char[]), uint32_t) | __builtin_types_compatible_p(__typeof__(const char[]), uint32_t) | __builtin_types_compatible_p(__typeof__(volatile char[]), uint32_t) | __builtin_types_compatible_p(__typeof__(const volatile char[]), uint32_t)) ? MR_TYPE_CHAR_ARRAY : 0) | ((__builtin_types_compatible_p(__typeof__(char *), uint32_t) | __builtin_types_compatible_p(__typeof__(const char *), uint32_t) | __builtin_types_compatible_p(__typeof__(volatile char *), uint32_t) | __builtin_types_compatible_p(__typeof__(const volatile char *), uint32_t)) ? MR_TYPE_STRING : 0)),
+			.mr_type = (0 |
+			            (__builtin_types_compatible_p(void, uint32_t) ? MR_TYPE_VOID : 0) |
+				        (__builtin_types_compatible_p(_Bool, uint32_t) ? MR_TYPE_BOOL : 0) |
+				        (__builtin_types_compatible_p(int8_t, uint32_t) ? MR_TYPE_INT8 : 0) |
+				        (__builtin_types_compatible_p(uint8_t, uint32_t) ? MR_TYPE_UINT8 : 0) |
+				        (__builtin_types_compatible_p(int16_t, uint32_t) ? MR_TYPE_INT16 : 0) |
+				        (__builtin_types_compatible_p(uint16_t, uint32_t) ? MR_TYPE_UINT16 : 0) |
+				        (__builtin_types_compatible_p(int32_t, uint32_t) ? MR_TYPE_INT32 : 0) |
+				        (__builtin_types_compatible_p(uint32_t, uint32_t) ? MR_TYPE_UINT32 : 0) |
+				        (__builtin_types_compatible_p(int64_t, uint32_t) ? MR_TYPE_INT64 : 0) |
+				        (__builtin_types_compatible_p(uint64_t, uint32_t) ? MR_TYPE_UINT64 : 0) |
+				        (__builtin_types_compatible_p(long long, uint32_t) ? MR_TYPE_INT64 : 0) |
+				        (__builtin_types_compatible_p(unsigned long long, uint32_t) ? MR_TYPE_UINT64 : 0) |
+				        (__builtin_types_compatible_p(float, uint32_t) ? MR_TYPE_FLOAT : 0) |
+				        (__builtin_types_compatible_p(_Complex float, uint32_t) ? MR_TYPE_COMPLEX_FLOAT : 0) |
+				        (__builtin_types_compatible_p(double, uint32_t) ? MR_TYPE_DOUBLE : 0) |
+				        (__builtin_types_compatible_p(_Complex double, uint32_t) ? MR_TYPE_COMPLEX_DOUBLE : 0) |
+				        (__builtin_types_compatible_p(long double, uint32_t) ? MR_TYPE_LONG_DOUBLE : 0) |
+				        (__builtin_types_compatible_p(_Complex long double, uint32_t) ? MR_TYPE_COMPLEX_LONG_DOUBLE : 0) |
+				        (__builtin_types_compatible_p(char, uint32_t) ? MR_TYPE_CHAR : 0) |
+				        (
+							(__builtin_types_compatible_p(__typeof__(char[]), uint32_t) |
+							 __builtin_types_compatible_p(__typeof__(const char[]), uint32_t) |
+							 __builtin_types_compatible_p(__typeof__(volatile char[]), uint32_t) |
+							 __builtin_types_compatible_p(__typeof__(const volatile char[]), uint32_t)
+							) ? MR_TYPE_CHAR_ARRAY : 0
+						) |
+				        (
+							(__builtin_types_compatible_p(__typeof__(char *), uint32_t) |
+							 __builtin_types_compatible_p(__typeof__(const char *), uint32_t) |
+							 __builtin_types_compatible_p(__typeof__(volatile char *), uint32_t) |
+							 __builtin_types_compatible_p(__typeof__(const volatile char *), uint32_t)
+						) ? MR_TYPE_STRING : 0)),
 			.mr_type_class = __builtin_classify_type(((sample_model_t *)0)->number),
 			.meta = "",
 			.self_ptr = __builtin_types_compatible_p(sample_model_t *, __typeof__(((sample_model_t *)0)->number)) | __builtin_types_compatible_p(sample_model_t const *, __typeof__(((sample_model_t *)0)->number)) | __builtin_types_compatible_p(sample_model_t volatile *, __typeof__(((sample_model_t *)0)->number)) | __builtin_types_compatible_p(sample_model_t const volatile *, __typeof__(((sample_model_t *)0)->number)),
