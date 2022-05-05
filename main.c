@@ -1051,12 +1051,232 @@ int main(int argc, char** argv)
 		.children = ms
 	};
 
-	MR_PRINT((sample_model_t, &m, JSON));
-	MR_FPRINT (stdout, (sample_model_t, &m, JSON));
+	// MR_PRINT((sample_model_t, &m, JSON));
+	// MR_FPRINT (stdout, (sample_model_t, &m, JSON));
 
-	(MR_FOR (stdout, MR_NARG ((sample_model_t, &m, JSON)), MR_ADD, MR_PRINT_ONE_ELEMENT, (sample_model_t, &m, JSON)));
+	// (MR_FOR (stdout, MR_NARG ((sample_model_t, &m, JSON)), MR_ADD, MR_PRINT_ONE_ELEMENT, (sample_model_t, &m, JSON)));
 
-	const int na = MR_NARG();
+	// MR_FOR1 (stdout, MR_ADD, MR_PRINT_ONE_ELEMENT, (sample_model_t, &m, JSON));
+
+	// MR_PRINT_ONE_ELEMENT (stdout, (sample_model_t, &m, JSON), 1);
+
+	// MR_IF_ELSE (MR_IS_IN_PAREN ((sample_model_t, &m, JSON)))
+	// (
+	// 	MR_PRINT_IN_PAREN (
+	// 		MR_NARG (sample_model_t, &m, JSON),
+	// 		stdout,
+	// 		MR_REMOVE_PAREN_ (sample_model_t, &m, JSON)
+	// 	)
+	// )
+	// (
+	// 	MR_PRINT_VALUE (stdout, (sample_model_t, &m, JSON))
+	// );
+
+	// MR_PRINT_IN_PAREN (
+	// 	MR_NARG (sample_model_t, &m, JSON),
+	// 	stdout,
+	// 	MR_REMOVE_PAREN_ (sample_model_t, &m, JSON)
+	// );
+
+	// MR_IF_ELSE (MR_PASTE2 (EQ_2_, 3))
+	// (
+	// 	MR_PRINT_IN_PAREN_ (3, stdout, sample_model_t, &m, JSON)
+	// )
+	// (
+	// 	MR_PRINT_STRUCT (stdout, sample_model_t, &m, JSON, CINIT)
+	// );
+
+
+	// MR_PRINT_IN_PAREN_ (3, stdout, sample_model_t, &m, JSON)
+
+
+	// MR_IF_ELSE (MR_PASTE2 (EQ_3_, 3))
+	// (
+	// 	MR_PRINT_VALUE (stdout, (sample_model_t, &m, JSON))
+	// )
+	// (
+	// 	MR_PRINT_STRUCT (stdout, sample_model_t, &m, JSON)
+	// )
+
+
+	// MR_PRINT_STRUCT (stdout, sample_model_t, &m, JSON);
+
+
+	// (
+	// 	{
+	// 		char * _dump_ = MR_SAVE_JSON (sample_model_t, &m);
+	// 		int _rv_ = 0;
+	// 		if (_dump_)
+	// 		{
+	// 			_rv_ = fprintf (stdout, "%s", _dump_);
+	// 			MR_FREE (_dump_);
+	// 		}
+	// 		_rv_;
+	// 	}
+	// );
+
+
+	// (
+	// 	{
+	// 		char * _dump_ = MR_SAVE_METHOD (json_save, sample_model_t, &m);
+	// 		int _rv_ = 0;
+	// 		if (_dump_)
+	// 		{
+	// 			_rv_ = fprintf (stdout, "%s", _dump_);
+	// 			MR_FREE (_dump_);
+	// 		}
+	// 		_rv_;
+	// 	}
+	// );
+
+
+	// (
+	// 	{
+	// 		char * _dump_ = (
+	// 			{
+	// 				mr_ra_ptrdes_t __ptrs__ = MR_SAVE (sample_model_t, &m);
+	// 				char * __str__ = NULL;
+	// 				if (__ptrs__.ra != NULL)
+	// 				{
+	// 					mr_remove_empty_nodes (&__ptrs__);\
+	// 					__str__ = json_save (&__ptrs__);
+	// 					MR_FREE (__ptrs__.ra);
+	// 				}
+	// 				__str__;
+	// 			}
+	// 		);
+	// 		int _rv_ = 0;
+	// 		if (_dump_)
+	// 		{
+	// 			_rv_ = fprintf (stdout, "%s", _dump_);
+	// 			MR_FREE (_dump_);
+	// 		}
+	// 		_rv_;
+	// 	}
+	// );
+
+
+	
+	// (
+	// 	{
+	// 		char * _dump_ = (
+	// 			{
+	// 				mr_ra_ptrdes_t __ptrs__ = MR_SAVE_TYPED (sample_model_t, &m);
+	// 				char * __str__ = NULL;
+	// 				if (__ptrs__.ra != NULL)
+	// 				{
+	// 					mr_remove_empty_nodes (&__ptrs__);\
+	// 					__str__ = json_save (&__ptrs__);
+	// 					MR_FREE (__ptrs__.ra);
+	// 				}
+	// 				__str__;
+	// 			}
+	// 		);
+	// 		int _rv_ = 0;
+	// 		if (_dump_)
+	// 		{
+	// 			_rv_ = fprintf (stdout, "%s", _dump_);
+	// 			MR_FREE (_dump_);
+	// 		}
+	// 		_rv_;
+	// 	}
+	// );
+
+
+	// (
+	// 	{
+	// 		char * _dump_ = (
+	// 			{
+	// 				mr_ra_ptrdes_t __ptrs__ = 
+	// 					MR_IF_ELSE (MR_IS_EMPTY (sample_model_t))
+	// 					(
+	// 						MR_SAVE_STR_TYPED (MR_PTR_DETECT_TYPE (&m), &m)
+	// 					)
+	// 					(
+	// 						(
+	// 							{
+	// 								MR_CHECK_TYPES (sample_model_t, &m);
+	// 								MR_SAVE_STR_TYPED ("sample_model_t", &m);
+	// 							}
+	// 						)
+	// 					);
+	// 				char * __str__ = NULL;
+	// 				if (__ptrs__.ra != NULL)
+	// 				{
+	// 					mr_remove_empty_nodes (&__ptrs__);\
+	// 					__str__ = json_save (&__ptrs__);
+	// 					MR_FREE (__ptrs__.ra);
+	// 				}
+	// 				__str__;
+	// 			}
+	// 		);
+	// 		int _rv_ = 0;
+	// 		if (_dump_)
+	// 		{
+	// 			_rv_ = fprintf (stdout, "%s", _dump_);
+	// 			MR_FREE (_dump_);
+	// 		}
+	// 		_rv_;
+	// 	}
+	// );
+
+
+	(
+		{
+			char * _dump_ = (
+				{
+					mr_ra_ptrdes_t __ptrs__ = 
+						(
+							{
+								((void) (1 / __builtin_types_compatible_p (sample_model_t, __typeof__ (*(&m)))));
+								(
+									{
+										mr_save_data_t __mr_save_data__;
+										void * __ptr__ = (void*)&m;
+										mr_fd_t __fd__;
+										memset (&__fd__, 0, sizeof (__fd__));
+										__fd__.name.str = mr_normalize_name (MR_STRINGIFY (&m));
+										__fd__.type = "sample_model_t";
+										__fd__.non_persistent = true;
+										__fd__.mr_type = MR_TYPE_DETECT (__typeof__ (*(&m)));
+										__fd__.size = sizeof (*(&m));
+										mr_detect_type (&__fd__);
+										if (!__builtin_types_compatible_p (__typeof__ ((&m) + 0), __typeof__ (&m)))
+										{
+											__fd__.mr_type_aux = __fd__.mr_type;
+											__fd__.mr_type = MR_TYPE_ARRAY;
+											__fd__.size = sizeof (&m);
+											__fd__.param.array_param.count = (0 + sizeof (&m)) / sizeof (*(&m));
+											__fd__.param.array_param.row_count = 1;
+										}
+										memset (&__mr_save_data__, 0, sizeof (__mr_save_data__));
+										if (__ptr__ != NULL)
+											mr_save (__ptr__, &__fd__, &__mr_save_data__);
+											__mr_save_data__.ptrs;
+									}
+								);
+							}
+						);
+					char * __str__ = NULL;
+					if (__ptrs__.ra != NULL)
+					{
+						mr_remove_empty_nodes (&__ptrs__);\
+						__str__ = json_save (&__ptrs__);
+						MR_FREE (__ptrs__.ra);
+					}
+					__str__;
+				}
+			);
+			int _rv_ = 0;
+			if (_dump_)
+			{
+				_rv_ = fprintf (stdout, "%s", _dump_);
+				MR_FREE (_dump_);
+			}
+			_rv_;
+		}
+	);
+
 
 	return 0;
 }
